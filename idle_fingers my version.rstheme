@@ -29,15 +29,25 @@
   margin: -1px 0 0 -1px;
   border: 1px solid #404040
 }
+
+
+
+/* Highlighting of current line in editor  */
 .ace_marker-layer .ace_active-line {
-  background: #353637
+  background: #646678
 }
 .ace_gutter-active-line {
-  background-color: #353637
+  background-color: #646678
 }
+
+
+
+/* Highlighting around other uses of selected word  */
 .ace_marker-layer .ace_selected-word {
-  border: 1px solid rgba(90, 100, 126, 0.88)
+  border: 5px solid rgba(100, 100, 100, 0.9)
 }
+
+
 .ace_invisible {
   color: #404040
 }
@@ -60,9 +70,29 @@
   background-color: #CC7833;
   border-color: #FFFFFF
 }
+
+
+
+/*Font color for new code chunks in markdown docs*/
 .ace_support.ace_function {
-  color: #B83426
+  color:#CC7833;
 }
+.ace_function {
+  color:#CC7833;
+}
+.ace_support.ace_function.ace_codebegin{
+  color: #CC7833;
+}
+.ace_support.ace_function.ace_codeend{
+  color: #CC7833;
+}
+.ace_foreign_line.background_highlight{
+  color: #CC7833;
+}
+
+
+
+
 .ace_variable.ace_parameter {
   font-style: italic
 }
@@ -100,6 +130,7 @@
   position: absolute;
   z-index: -1;
   background-color: #464646;
+  color: #CC7833;
 }
 .ace_marker-layer .ace_active_debug_line {
   position: absolute;
@@ -119,42 +150,6 @@
   color: #abc2d4 !important;
 }
 
-
-/* ORIGINAL TERMINAL CSS
-
-.terminal {
-  background-color: #323232;
-  color: #ffffff;
-  font-feature-settings: "liga" 0;
-  position: relative;
-  user-select: none;
-  -ms-user-select: none;
-  -webkit-user-select: none;
-}
-.terminal.xterm-cursor-style-block.focus:not(.xterm-cursor-blink-on) .terminal-cursor {
-  background-color: #CCC;
-  color: #1e1e1e;
-}
-.terminal.focus.xterm-cursor-style-bar:not(.xterm-cursor-blink-on) .terminal-cursor::before,
-.terminal.focus.xterm-cursor-style-underline:not(.xterm-cursor-blink-on) .terminal-cursor::before {
-  content: '';
-  position: absolute;
-  background-color: #CCC;
-}
-
-.terminal:not(.focus) .terminal-cursor {
-  outline: 1px solid #CCC;
-  outline-offset: -1px;
-}
-.terminal .xterm-selection div {
-   position: absolute;
-   background-color: #CCC;
-}
-.terminal .xterm-viewport {
-  background-color: #323232;
-  overflow-y: scroll;
-}
-*/
 
 
 
@@ -749,6 +744,12 @@
 .GD15MCFCOTB{
   color: #FF0000;
 }
+
+
+
+
+
+
 
 .rstudio-themes-flat.rstudio-themes-dark-menus .ace_editor.ace_autocomplete .ace_marker-layer .ace_active-line,
 .rstudio-themes-flat.rstudio-themes-dark-menus .ace_editor.ace_autocomplete .ace_marker-layer .ace_line-hover {

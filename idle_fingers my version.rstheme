@@ -32,12 +32,16 @@
 
 
 
-/* Highlighting of current line in editor  */
+/* Highlighting of current line in editor */
 .ace_marker-layer .ace_active-line {
-  background: #646678
+  background: #4d4d4d;
+  border-top: 1px solid #808080;
+  border-bottom: 1px solid #808080
 }
 .ace_gutter-active-line {
-  background-color: #646678
+  background-color: #4d4d4d;
+  border-top: 1px solid #808080;
+  border-bottom: 1px solid #808080
 }
 
 

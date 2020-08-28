@@ -8,13 +8,31 @@
   width: 1px;
   background: #555;
 }
+
+
+
+/* Formatting for code in Help panel*/
+.rstudio-themes-flat.rstudio-themes-dark.editor_dark.ace_editor_theme pre, .rstudio-themes-flat.rstudio-themes-dark.editor_dark.ace_editor_theme pre code, .rstudio-themes-flat.rstudio-themes-dark.editor_dark.ace_editor_theme code {
+  background: #000000;
+}
+
+
+
+
+
+/* Formatting for Source panel*/
 .ace_editor, .rstudio-themes-flat.ace_editor_theme .profvis-flamegraph, .rstudio-themes-flat.ace_editor_theme, .rstudio-themes-flat .ace_editor_theme {
   background-color: #323232;
   color: #FFFFFF
 }
+
+/*Text cursor*/
 .ace_cursor {
   color: #A7A7A7
 }
+
+
+/*Selected text*/
 .ace_marker-layer .ace_selection {
   background: rgba(90, 100, 126, 0.88)
 }
@@ -32,33 +50,38 @@
 
 
 
-/* Highlighting of current line in editor */
+/* Highlighting of current line in Source panel */
 .ace_marker-layer .ace_active-line {
   background: #4d4d4d;
-  border-top: 1px solid #808080;
-  border-bottom: 1px solid #808080
+  border-top: 1.5px solid #808080;
+  border-bottom: 1.5px solid #808080
 }
 .ace_gutter-active-line {
   background-color: #4d4d4d;
-  border-top: 1px solid #808080;
-  border-bottom: 1px solid #808080
+  border-top: 1.5px solid #808080;
+  border-bottom: 1.5px solid #808080
 }
 
 
 
 /* Highlighting around other uses of selected word  */
 .ace_marker-layer .ace_selected-word {
-  border: 5px solid rgba(100, 100, 100, 0.9)
+  outline: 5px solid rgba(100, 100, 100, 1)
 }
 
 
 .ace_invisible {
   color: #404040
 }
+
+/* Font color for functions */
 .ace_keyword,
 .ace_meta {
   color: #CC7833
 }
+
+
+/* Font color for constants like NULL, NA, numbers */
 .ace_constant,
 .ace_constant.ace_character,
 .ace_constant.ace_character.ace_escape,
@@ -66,6 +89,8 @@
 .ace_support.ace_constant {
   color: #6C99BB
 }
+
+
 .ace_invalid {
   color: #FFFFFF;
   background-color: #FF0000
@@ -100,15 +125,27 @@
 .ace_variable.ace_parameter {
   font-style: italic
 }
+
+
+/*Font color for strings (i.e., anything in quotes) */
 .ace_string {
   color: #A5C261
 }
+
+
+
 .ace_string.ace_regexp {
   color: #CCCC33
 }
+
+
+/*Font color for comments */
 .ace_comment {
   color: #BC9458
 }
+
+
+
 .ace_meta.ace_tag {
   color: #FFE5BB
 }
@@ -167,7 +204,29 @@
   -webkit-user-select: none;
 }
 
-/* Use border-left to simulate a vertical line text cursor shape*/
+
+
+
+/* Use border-left to simulate a vertical line text cursor shape in Source and Console panels*/
+
+/*  Don't bother trying to change cursor shape in Terminal.
+That has to be done with bash profile or equivalent config files.
+
+For quick fixes:
+
+For Bash:
+to use block cursor: echo -e '\033[1 q'
+to use bar cursor: echo -e '\033[6 q'
+
+
+for zsh:
+to use block cursor: echo -ne '\e[1 q'
+to use bar cursor: echo -ne '\e[5 q'
+
+
+  */
+
+
 .terminal.xterm-cursor-style-block.focus:not(.xterm-cursor-blink-on) .terminal-cursor {
   border: none;
   border-left: 1px solid #CCC;
@@ -193,11 +252,6 @@
   background-color: #323232;
   overflow-y: scroll;
 }
-
-
-
-
-
 
 
 
@@ -744,11 +798,22 @@
    color: #f0f0f0;
 }
 
-/*Font color for warning and error messages*/
+
+
+/*Font color for warning and error messages in Console*/
 .GD15MCFCOTB{
   color: #FF0000;
 }
 
+/*Font color for warning and error messages in Markdown output
+Not: .GD15MCFCAXC, .ace_constant.ace_language.GD15MCFCAXC, .ace_constant.ace_language,
+.GD15MCFCAW, .GD15MCFCKT, .GD15MCFCMWC.GD15MCFCKT.ace_lineWidgetContainer, .ace_lineWidgetContainer
+
+*/
+
+.GD15MCFCAXC{
+  color: #FF0000;
+}
 
 
 
